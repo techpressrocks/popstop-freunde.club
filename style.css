@@ -1,0 +1,622 @@
+/*
+	Theme Name:   popstop-freunde.club
+	Theme URI:    http://popstop-freunde.club
+	Description:  Child theme of wp-forge
+	Author:       Andreas Feuz
+	Author URI:   http://popstop-freunde.club
+	Template:     wp-forge
+	Version:      1.0.0
+	License:      GNU General Public License v2 or later
+	License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+	Tags:         user generated content, sticky headerbar, child theme, fukasawa
+	Text Domain:  naoto
+	
+	All files, unless otherwise stated, are released under the GNU General Public License
+	version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
+
+-----------------------------------------------------------------------------------
+
+	1.	General HTML elements
+	2.  Header (including text logo)
+	3.	Content
+	4.	Front Page
+	5.  Footer
+	6.	Social Follow Icons & Social Sharing Icons
+	7.	WooCommerce Adjustments (Frontpage and WC Pages)
+	8.	Media Queries
+
+----------------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------------- */
+/*	1. General HTML elements
+/* -------------------------------------------------------------------------------- */
+body, a, p, h1, h2, h3, h4, h5, h6 {
+	font-family: 'Roboto Condensed', sans-serif !important;
+}
+body {
+    background-color: #FFF !important;
+}
+ul {
+    list-style-type: none;
+    margin-left: 0;
+}
+li {
+	font-size: 1.2rem;
+}	
+button, .button {
+	background-color: #cc0000 !important;
+	color: #FFF !important;
+}	
+/* -------------------------------------------------------------------------------- */
+/*	2.  Header (including text logo)
+/* -------------------------------------------------------------------------------- */
+a.popstop-freunde-logo {
+	font-family: 'Roboto Condensed', sans-serif;
+	display:inline-block;
+    width: 75px;
+    height: 75px;
+    line-height: 65px;
+    border: 2px solid #f5f5f5;
+    border-radius: 50%;
+    color:#FFF;
+    text-align: center;
+    text-decoration:none;
+ 	background-color: #cc0000;
+    box-shadow: 0 0 3px gray;
+    font-size: 20px;
+	margin-right: 5px;
+	-webkit-transition: -webkit-transform 1s ease-in-out !important;
+    transition: transform 1s ease-in-out !important;	
+}
+a.popstop-freunde-logo:hover {
+	display: inline-block;
+	transform: rotate(360deg);
+	-webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+}
+.top-bar-left span {
+	font-weight: bold;
+}
+.nav_container {
+	padding-top: 0.7rem;
+	padding-bottom: 0.3rem;
+}
+.contain-to-grid .top-bar, .top-bar, .top-bar ul, .top-bar ul li, .contain-to-grid, .title-bar {
+    background-color: #FFF !important;
+}
+.top-bar-left {
+	padding-top: 0rem;
+}
+.top-bar-left ul li {
+	list-style-type: none !important;
+	float: left !important;
+	padding: 0.9375rem 0.9375rem;
+}
+.contain-to-grid .top-bar, .top-bar, .top-bar-left ul li, .top-bar-left li:not(.has-form) a:not(.button), .top-bar-left .dropdown li:not(.has-form):not(.active) > a:not(.button), .contain-to-grid {
+    background-color: #fff !important;
+	color: #333 !important;
+	font-size: 1.3rem;
+	margin-top: 0rem;
+	margin-bottom: 0rem;
+	padding-bottom: 0;
+}
+.top-bar-left li.active:not(.has-form) a:not(.button) {
+	background-color: #cc0000;
+    padding: 0;
+}
+.top-bar-left ul.right li a {
+	border-bottom: 5px solid transparent;
+}	
+.top-bar-left ul.right li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 5px;
+	background-color: #cc0000;
+    transition: width .3s;
+	-moz-transition: width 0.3s;
+}
+.top-bar-left ul.right li a:hover::after {
+    width: 100%;
+}
+.right {
+   padding-left: 2rem;
+}
+/* -------------------------------------------------------------------------------- */
+/*	3.  Content
+/* -------------------------------------------------------------------------------- */
+article {
+    border-bottom: 0 !important;
+	padding-bottom: 0rem !important;
+	margin-bottom: 0 !important;
+}	
+/* -------------------------------------------------------------------------------- */
+/*	4.  Frontpage
+/* -------------------------------------------------------------------------------- */
+.front-page div.content_wrap {
+	padding-top: 0;
+}	
+#popstopfreunde-freundinwerden, #popstopfreunde-anmeldung, #popstopfreunde-popstoplive, #popstopfreunde-programm, #popstopfreunde-kontakt, #blog {
+	padding: 2.5rem 0;
+}
+#popstopfreunde-freundinwerden h2 {
+	font-size: 3rem;
+	font-family: 'Fjalla One', sans-serif !important;
+}
+#popstopfreunde-freundinwerden h2:nth-child(2) {
+	padding-left: 2.25rem;
+}
+#popstopfreunde-freundinwerden h2:nth-child(3) {
+	padding-left: 4.5rem;
+}	
+#popstopfreunde-anmeldung, #popstopfreunde-anmeldung div.content_wrap, #popstopfreunde-programm,
+#popstopfreunde-programm div.content_wrap, #blog, #blog div.content_wrap {
+	color: #FFF;
+	background-color: #cc0000;
+}
+#popstopfreunde-freundinwerden .techpress-section-title {
+	color: #FFF;
+}	
+#popstopfreunde-freundinwerden, #popstopfreunde-freundinwerden div.content_wrap, #redesign-hero, #redesign-hero div.content_wrap {
+	color: #FFF;
+	background-color: #666666;
+}
+#popstopfreunde-freundinwerden p {
+	font-size: 1.3rem;
+}	
+.popstopfreund-freundinwerden-cta {
+	padding-top: 20px;
+}
+a.popstopfreunde-freundinwerden-button {
+    background-color: #cc0000;
+    color: #FFF;
+    font-size: 1.5rem;
+    padding: 0.9rem;
+	border-radius: 2px;
+	border: 1px solid #FFF;
+}
+.entry-content div i {
+	color: #c15169;
+	text-shadow: 0 0 5px #f5f5f5;
+}
+#popstopfreunde-popstoplive, #popstopfreunde-popstoplive div.content_wrap, #popstopfreunde-kontakt, #popstopfreunde-kontakt div.content_wrap {
+	color: #333;
+	background: #FFF;
+}	
+#popstopfreunde-programm h4 {
+	font-size: 1rem;
+	color: #FFF;
+}
+#popstopfreunde-programm h5 {
+	font-size: 1.2rem;
+	color: #FFF;
+}
+#popstopfreunde-programm item title {
+	font-size: 1.4rem;
+}
+#content.medium-12.large-12.columns {
+	padding-left: 0;
+    padding-right: 0;	
+}
+#radioforge1 {
+	margin: 0 auto;
+}
+#MusesRadioPlayer-HTML5-player-0 {
+	float: normal !important;
+}
+#popstopfreunde-anmeldung .entry-content h4 {
+	padding-bottom: 2rem;
+}	
+#popstopfreunde-anmeldung .entry-content h5 {
+	line-height: 4rem;
+}
+.more-link {
+	color: #FFF !important;
+	font-size: 1.2rem;
+}	
+.large-12.columns {
+	padding-left: 0;
+    padding-right: 0;	
+}
+.large-8.columns {
+	padding-left: 0;
+}
+#secondary.medium-4.large-4.columns.widget-area {
+	padding-right: 0;	
+}
+#wprmenu_bar .bar_logo {
+    float: right;
+}
+#secondary .widget ul {
+    list-style-type: none !important;
+}
+#secondary .widget-title {
+	font-size: 1.5rem !important;
+}	
+#secondary a {
+	font-size: 1.25rem !important;
+}
+.widget-area .widget ul {
+    margin-left: 0;
+}
+/* -------------------------------------------------------------------------------- */
+/*	5.  Footer
+/* -------------------------------------------------------------------------------- */
+.footer_container {
+	/*background-color: #c17151 !important;*/
+	/*background-color: #51a1c1; !important;*/
+	background-color: #7e7c81 !important;
+}
+footer[role="contentinfo"] {
+    border-top: 0px !important;
+    clear: both;
+    line-height: 0 !important;
+    padding: 1rem !important;
+}
+.footer_wrap {
+    background-color: transparent !important;
+ }
+ #footer p {
+	 color: #FFF;
+ }
+ footer[role="contentinfo"] a, #footer .menu .active > a {
+    color: #FFF !important;
+	padding-right: 5px;
+}
+/* -------------------------------------------------------------------------------- */
+/*	6. Social Follow Icons & Social Sharing Icons
+/* -------------------------------------------------------------------------------- */
+.techpress-followsticky {
+	display: inline-block;
+	float: right;
+	color: #999;
+	padding-top: 0.8rem;
+}	
+.followsticky-icons {
+	display: inline-block;
+    float: right;
+	margin-left: 15px;
+	padding: 0;
+}
+.followsticky-icons a {
+	display: inline-block;
+	color: #cc0000;
+	margin-left: 10px;
+	font-size: 1.7rem;
+}
+.naoto-twitter:before {
+	font-family: FontAwesome;
+	content: "\f099";	
+}
+.naoto-twitter:hover:before {
+    color: #55acee;
+}
+.naoto-facebook:before {
+	font-family: FontAwesome;
+	content: "\f082";	
+}
+.naoto-facebook:hover:before {
+    color: #3b5998;
+}
+.naoto-rss:before {
+	font-family: FontAwesome;
+	content: "\f09e";	
+}
+.naoto-rss:hover:before {
+    color: #f26522;
+}
+.naoto-sharing-floating {
+    display: block;
+    z-index: 9999;
+	float: left;
+}
+.naoto-floating {
+    width: 50px;
+    height: 50px;
+    display: block;
+    color: #fff;
+    text-align: center;
+	float: left;
+}
+.naoto-sharing-floating a, .naoto-sharing-floating a:hover {
+	color: #FFF !important;
+}
+.naoto-sharing-floating .naoto-floating:hover {
+	transform: scale(1.1, 1.1);
+	-ms-transform: scale(1.1, 1.1); /* IE 9 */
+	-webkit-transform: scale(1.1, 1.1); /* Safari and Chrome */
+	-o-transform: scale(1.1, 1.1); /* Opera */
+	-moz-transform: scale(1.1, 1.1); /* Firefox */
+}	
+.naoto-sharing-floating .naoto-floating i {
+    font-size: 30px;
+    line-height: 50px;
+}
+.naoto-irecommendthis {
+	font-size: 24px;
+}
+.naoto-irecommendthis a {
+	line-height: 50px;
+}
+.naoto-instagram-floating {
+	background-color: #125688;
+}
+.naoto-pinterest-floating {
+	background-color: #bd081c;
+}
+.naoto-facebook-floating {
+	background-color: #3b5998;
+}
+.naoto-twitter-floating {
+	background-color: #55acee;
+}
+.naoto-tumblr-floating {
+	background-color: #35465c;
+}
+.naoto-google-floating {
+	background-color: #dd4b39;
+}
+.naoto-reddit-floating {
+	background-color: #ff4500;
+}
+.naoto-stumbleupon-floating {
+	background-color: #eb4924;
+}
+.naoto-linkedin-floating {
+	background-color: #0077b5;
+}
+.naoto-vk-floating {
+	background-color: #45668e;
+}
+.naoto-rss-floating {
+	background-color: #f26522;
+}
+/* -------------------------------------------------------------------------------- */
+/*	7. WooCommerce Adjustments (Frontpage and WC Pages)
+/* -------------------------------------------------------------------------------- */
+.woocommerce ul.products li {
+	width: auto !important;
+	margin: 0 !important;
+}
+.woocommerce ul.products li.product h3 {
+	min-height: 6rem !important;
+}
+a.woocommerce-LoopProduct-link {
+	color: #FFF;
+}
+.woocommerce ul.products li.product .price {
+	display: none;	
+}
+.woocommerce ul.products li.product .button {
+    border: 1px solid #fff;
+    margin-top: 1em;
+	font-weight: normal;
+	font-family: 'Roboto Condensed', sans-serif;
+}	
+.woo-popstop-freunde-logo {
+	font-family: 'Roboto Condensed', sans-serif;
+	display:inline-block;
+    width: 75px;
+    height: 75px;
+    line-height: 65px;
+    border: 2px solid #f5f5f5;
+    border-radius: 50%;
+    color:#FFF;
+    text-align: center;
+    text-decoration:none;
+ 	background-color: #cc0000;
+    box-shadow: 0 0 3px gray;
+    font-size: 20px;
+	margin-right: 5px;
+	-webkit-transition: -webkit-transform 1s ease-in-out !important;
+    transition: transform 1s ease-in-out !important;	
+}
+.woo-popstop-freunde-logo:hover {
+	display: inline-block;
+	transform: rotate(360deg);
+	-webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+}
+section#popstopfreunde-anmeldung div.large-4.columns span {
+	font-size: 20px;
+}	
+section#popstopfreunde-anmeldung div.large-4.columns {
+	background-color: #666666;
+	border-radius: 4px;
+	padding: 1rem;
+	margin-right: 1rem;
+	width: 32%;
+}
+.popstop-freunde-abopreis {
+	font-size: 2rem;
+	padding-top: 0.5rem;
+	float: right;
+}
+.button.wc-forward {
+	display: none !important;
+}
+a.checkout-button.button.alt.wc-forward {
+	display: block !important;
+}
+.woocommerce-placeholder {
+	display: none !important;
+}
+.woocommerce-message:before {
+    content: "\e015";
+    color: #cc0000 !important;
+}
+.woocommerce-message {
+    border-top-color: #cc0000 !important;
+}
+.woocommerce-shipping-fields {
+	display: none !important;
+}
+.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1 {
+    float: left;
+    width: 100% !important;
+}
+#billing_email_field {
+	width: 100%;
+}
+#order_review_heading {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+.subscription-details {
+	visibility: hidden;
+}
+.subscription-details:after {
+	visibility: visible;
+	content: "für 1 Jahr";
+}
+.woocommerce-checkout label {
+	font-size: 1.25rem !important;
+}
+li.post-157 h3 {
+	width: 50%;
+	float: left;	
+}
+span.popstopfreunde-spende {
+	width: 50%;
+	float: right;
+}
+.popstopfreunde-spende label {
+	color: #FFF;
+	font-size: 1.1rem;
+	float: right;
+}
+input#popstopfreunde_spende, input[placeholder], [placeholder], *[placeholder] {
+	color: #333 !important;
+	opacity: 0.9 !important;
+	text-align: center;
+}
+::-webkit-input-placeholder { /* Chrome */
+	color: #333 !important;
+	opacity: 0.9 !important;
+}
+:-ms-input-placeholder { /* IE 10+ */
+	color: #333 !important;
+	opacity: 0.9 !important;
+}
+::-moz-placeholder { /* Firefox 19+ */
+	color: #333 !important;
+	opacity: 0.9 !important;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+	color: #333 !important;
+	opacity: 0.9 !important;
+}
+#mailpoet_subscription_section h3 {
+	visibility: hidden;
+}
+#mailpoet_subscription_section h3:after {
+	visibility: visible;
+	content: "Abonnier unseren Newsletter! Danke!";
+	float: left;
+}
+.nav_container.norm.nofp {
+     background-color: #cc0000;
+}
+.contain-to-grid.nofp .top-bar.nofp, .top-bar.nofp, .contain-to-grid.nofp, .top-bar.nofp ul, .top-bar-left.nofp ul li, .top-bar-left.nofp li:not(.has-form) a:not(.button) {
+	background-color: #cc0000 !important;
+	color: #FFF !important;
+}
+.contain-to-grid .top-bar, .top-bar
+.followsticky-icons.nofp a{
+	color: #FFF;
+}
+a.popstop-freunde-logo-nofp {
+	font-family: 'Roboto Condensed', sans-serif;
+	display:inline-block;
+    width: 75px;
+    height: 75px;
+    line-height: 65px;
+    border: 2px solid #f5f5f5;
+    border-radius: 50%;
+    color:#FFF;
+    text-align: center;
+    text-decoration:none;
+ 	background-color: #cc0000;
+    box-shadow: 0 0 3px gray;
+    font-size: 20px;
+	margin-right: 5px;
+	-webkit-transition: -webkit-transform 1s ease-in-out !important;
+    transition: transform 1s ease-in-out !important;	
+}
+.top-bar-left.nofp span {
+	font-weight: bold;
+	color: #FFF;
+}
+.top-bar-left.nofp ul.right li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 5px;
+	background-color: #FFF;
+    transition: width .3s;
+	-moz-transition: width 0.3s;
+}
+
+.menu-item i._mi {
+    margin-top: 0;
+    font-size: 2.2rem !important;
+    color: #cc0000 !important;
+}
+.nav_container.norm.nofp .menu-item i._mi {
+	color: #FFF !important;
+}
+/*.top-bar-left.nofp ul.right li a {
+	border-bottom: 5px solid #FFF !important;
+}*/
+.top-bar-left.nofp ul.right li a:hover:after {
+    width: 100%;
+}
+/*.menu > li > a {
+	padding: 0.2rem 0.2rem !important;
+}*/
+/*.dropdown.menu > li.is-dropdown-submenu-parent > a:after {
+    border-color: #cc0000 transparent transparent !important;
+    border-width: 10px 10px 13px;
+    content: "";
+    display: block;
+    height: 0;
+    margin-top: -2px;
+    right: 0;
+    width: 10px;
+}
+.dropdown.menu > li.is-dropdown-submenu-parent > a:hover:after {
+	border-color: blue transparent transparent !important;
+    border-width: 0;
+}*/
+/*.top-bar-left ul.right li a:after {
+    background-color: #FFF !important;
+    transition: none !important;
+    -moz-transition: none !important;
+}
+/*FAQ*/
+.arconix-faq-wrap {
+	background-color: #F1F1F1 !important;
+    border-radius: 2px !important;
+	border: 1px solid #666666;
+}
+.arconix-faq-title {
+    font-size: 1.8rem !important;
+}
+/* -------------------------------------------------------------------------------- */
+/*	8. Media Queries
+/* -------------------------------------------------------------------------------- */
+@media only screen and (max-width: 1024px) { 
+	.woocommerce-page .large-12.columns {
+		padding-left: 0.9375rem;
+		padding-right: 0.9375rem;
+	}
+	.entry-content, .techpress-section-title, .techpress-book-title {
+		padding-left: 0.9375rem;
+		padding-right: 0.9375rem;	
+	}	
+	#secondary.medium-4.large-4.columns.widget-area {
+		padding-right: 0.9375rem;	
+	}
+}
