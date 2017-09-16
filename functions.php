@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * @package    popstop-freunde.club
  * @version    1.0.0
@@ -16,6 +16,7 @@ function popstopfreunde_theme_setup() {
 	//Enqueue styles and scripts
 	add_action( 'wp_enqueue_scripts', 'popstopfreunde_enqueue_scripts' );
 	add_action( 'wp_print_styles', 'popstopfreunde_load_fonts' );
+	add_action('wp_head', 'popstopfreunde_add_favicon' );
 }
 function popstopfreunde_enqueue_scripts() {
 	//Load stylesheet of parent theme - WP Forge
@@ -25,6 +26,11 @@ function popstopfreunde_enqueue_scripts() {
 	wp_enqueue_script( 'smooth-scrolling', get_stylesheet_directory_uri() . '/js/smooth-scrolling.js', array( 'jquery' ), '1', true );
 	wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/css/font-awesome.min.css' );
 }
+function popstopfreunde_add_favicon(){ ?>
+    <!-- Custom Favicons -->
+    <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri();?>/images/favicon-popstopfreunde.ico"/>
+    <?php }
+
 // Load Roboto - Google Fonts
 function popstopfreunde_load_fonts() {
     wp_register_style('roboto', 'http://fonts.googleapis.com/css?family=Roboto+Condensed:300,700');
@@ -33,11 +39,14 @@ function popstopfreunde_load_fonts() {
 	wp_enqueue_style( 'fjalla');
 }
 function popstopfreunde_follow_links() {
-	$techpress_facebook = 'http://www.facebook.com/PopStopDasMusikradio';
-	$techpress_rss = site_url() . '/feed';
-	$techpress_follow_links = '<a class="naoto-facebook" href="' . $techpress_facebook . '" target="_blank" title="Folge popstop.eu auf Facebook!"></a>';
-	$techpress_follow_links .= '<a class="naoto-rss" href="' . $techpress_rss . '" title="Abonnieren Sie neuen Inhalt von popstop-freunde.club"></a>';
-	echo $techpress_follow_links;
+	$popstopfreunde_facebook = 'http://www.facebook.com/PopStopDasMusikradio';
+	//$techpress_rss = site_url() . '/feed';
+	$popstopfreunde_forum = 'http://www.popstop-forum.de';
+	$popstopfreunde_youtube = 'https://www.youtube.com/channel/UCAgF_-EboDPjLhmj6T5PeEQ';
+	$popstopfreunde_follow_links = '<a class="naoto-youtube" href="' . $popstopfreunde_youtube . '" target="_blank" title="Folge unserem YouTube-Kanal!"></a>';
+	$popstopfreunde_follow_links .= '<a class="naoto-facebook" href="' . $popstopfreunde_facebook . '" target="_blank" title="Folge popstop.eu auf Facebook!"></a>';
+	$popstopfreunde_follow_links .= '<a class="naoto-forum" href="' . $popstopfreunde_forum . '" target="_blank" title="Besuche das inoffizielle Popstop Fan Forum!"></a>'; 
+	echo $popstopfreunde_follow_links;
 }
 
 function popstopfreunde_sharing_links_floating() {
@@ -76,7 +85,11 @@ function new_excerpt_more($more) {
 	return '<a class="moretag" href="'. get_permalink($post->ID) . '"> Read the full article...</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
-
+//Replaces the "private" post label with "Für Mitglieder:"
+add_filter( 'private_title_format', 'myprefix_private_title_format' );
+function myprefix_private_title_format( $format ) {
+    return 'Für Mitglieder: %s';
+}
 /*******************************
  * Misc. WooCommerce Adjustments
  *
@@ -181,14 +194,14 @@ function popstopfreunde_spendeninput_save( $cart_item_data, $product_id ) {
     }
     return $cart_item_data;
 }
-add_filter( 'woocommerce_add_cart_item_data', 'popstopfreunde_spendeninput_save', 99, 2 );
+add_filter( 'woocommerce_add_cart_item_data', 'popstopfreunde_spendeninput_save', 98, 2 );
 //Use cart item data (value "popstopfreunde_spende) and add it to the cart/checkout totals
 function popstopfreunde_spendeninput_cart( $cart_object ) {  
     if( !WC()->session->__isset( "reload_checkout" )) {
         /* Gift wrap price */
-        foreach ( $cart_object->cart_contents as $key => $value ) {
+		foreach ( $cart_object->cart_contents as $key => $value ) {
             if( isset( $value["popstopfreunde_spende"] ) ) {
-                  $value['data']->price = $value["popstopfreunde_spende"];
+                  $value['data']->set_price ($value["popstopfreunde_spende"]);
             }
         }   
     }   

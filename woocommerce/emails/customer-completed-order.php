@@ -25,7 +25,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
-<p><?php printf( 'Hallo neues Mitgliedd! Dein Antrag um Mitgliedschaft vom %s ist akzeptiert. Die Einzelheiten unten werden zu deiner Information angezeigt:' , get_option( 'blogname' ) ); ?></p>
+<p><?php printf( 'Hallo neues Mitglied! Dein Antrag um Mitgliedschaft im Förderverein %s ist akzeptiert. Die Einzelheiten unten werden zu deiner Information angezeigt:' , get_option( 'blogname' ) ); ?></p>
+<p>Wir werden dich über unseren Newsletter informieren, was wir genau mit den Mitgliederbeiträgen machen und vor allem was wir dir als Dankeschön schenken können. Wir bitten dich noch um etwas Geduld. Danke!</p>
 
 <?php
 

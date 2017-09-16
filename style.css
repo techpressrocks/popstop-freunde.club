@@ -2,7 +2,7 @@
 	Theme Name:   popstop-freunde.club
 	Theme URI:    http://popstop-freunde.club
 	Description:  Child theme of wp-forge
-	Author:       Andreas Feuz
+	Author:       AFB
 	Author URI:   http://popstop-freunde.club
 	Template:     wp-forge
 	Version:      1.0.0
@@ -33,6 +33,10 @@
 body, a, p, h1, h2, h3, h4, h5, h6 {
 	font-family: 'Roboto Condensed', sans-serif !important;
 }
+.entry-content-post p, .entry-content-post ul li, .entry-content-post ol li, .entry-content-post table, .comment-content table, .entry-content-post address, .comment-content address, .entry-content-post pre, .comment-content pre, .comments-area article header cite, #comments, .entry-content-post dl, .entry-content-post dt {
+    color: #000 !important;
+    font-size: 1.2rem !important;
+}
 body {
     background-color: #FFF !important;
 }
@@ -45,6 +49,10 @@ li {
 }	
 button, .button {
 	background-color: #cc0000 !important;
+	color: #FFF !important;
+}
+button:hover, .button:hover {
+	background-color: #333 !important;
 	color: #FFF !important;
 }	
 /* -------------------------------------------------------------------------------- */
@@ -77,6 +85,9 @@ a.popstop-freunde-logo:hover {
 }
 .top-bar-left span {
 	font-weight: bold;
+}
+.top-bar-left a span {
+	color: #cc0000;
 }
 .nav_container {
 	padding-top: 0.7rem;
@@ -132,11 +143,21 @@ article {
 	margin-bottom: 0 !important;
 }	
 /* -------------------------------------------------------------------------------- */
+/*	4.  Zeitreise Content
+/* -------------------------------------------------------------------------------- */
+article.category-zeitreise h1.entry-title-post {
+    font-size: 2rem;
+	text-align: center;
+}
+article.category-zeitreise .entry-meta-header {
+	display: none;
+}	
+/* -------------------------------------------------------------------------------- */
 /*	4.  Frontpage
 /* -------------------------------------------------------------------------------- */
 .front-page div.content_wrap {
 	padding-top: 0;
-}	
+}
 #popstopfreunde-freundinwerden, #popstopfreunde-anmeldung, #popstopfreunde-popstoplive, #popstopfreunde-programm, #popstopfreunde-kontakt, #blog {
 	padding: 2.5rem 0;
 }
@@ -160,7 +181,7 @@ article {
 }	
 #popstopfreunde-freundinwerden, #popstopfreunde-freundinwerden div.content_wrap, #redesign-hero, #redesign-hero div.content_wrap {
 	color: #FFF;
-	background-color: #666666;
+	background-color: #848484;
 }
 #popstopfreunde-freundinwerden p {
 	font-size: 1.3rem;
@@ -176,6 +197,10 @@ a.popstopfreunde-freundinwerden-button {
 	border-radius: 2px;
 	border: 1px solid #FFF;
 }
+/*a.popstopfreunde-freundinwerden-button:hover {
+ 	border: 1px solid #333 !important;
+	border-radius: 2px;
+}*/
 .entry-content div i {
 	color: #c15169;
 	text-shadow: 0 0 5px #f5f5f5;
@@ -276,7 +301,7 @@ footer[role="contentinfo"] {
 .followsticky-icons {
 	display: inline-block;
     float: right;
-	margin-left: 15px;
+	margin-left: 0;
 	padding: 0;
 }
 .followsticky-icons a {
@@ -304,6 +329,20 @@ footer[role="contentinfo"] {
 	content: "\f09e";	
 }
 .naoto-rss:hover:before {
+    color: #f26522;
+}
+.naoto-youtube:before {
+	font-family: FontAwesome;
+	content: "\f167";	
+}
+.naoto-youtube:hover:before {
+    color: #f26522;
+}
+.naoto-forum:before {
+	font-family: FontAwesome;
+	content: "\f086";	
+}
+.naoto-forum:hover:before {
     color: #f26522;
 }
 .naoto-sharing-floating {
@@ -384,7 +423,17 @@ footer[role="contentinfo"] {
 }
 a.woocommerce-LoopProduct-link {
 	color: #FFF;
+	cursor: default !important;
 }
+#popstopfreunde-anmeldung li.post-155 h2, #popstopfreunde-anmeldung li.post-156 h2 {
+	min-height: 8rem;
+}
+h2.woocommerce-loop-product__title {
+	text-align: left;
+}
+ul.products li{
+    text-align: center
+}	
 .woocommerce ul.products li.product .price {
 	display: none;	
 }
@@ -394,6 +443,9 @@ a.woocommerce-LoopProduct-link {
 	font-weight: normal;
 	font-family: 'Roboto Condensed', sans-serif;
 }	
+/*.woocommerce ul.products li.product .button:hover {
+    border: 1px solid #333 !important;
+}*/
 .woo-popstop-freunde-logo {
 	font-family: 'Roboto Condensed', sans-serif;
 	display:inline-block;
@@ -423,11 +475,12 @@ section#popstopfreunde-anmeldung div.large-4.columns span {
 	font-size: 20px;
 }	
 section#popstopfreunde-anmeldung div.large-4.columns {
-	background-color: #666666;
+	background-color: #848484;
 	border-radius: 4px;
 	padding: 1rem;
 	margin-right: 1rem;
 	width: 32%;
+	min-height: 20rem;
 }
 .popstop-freunde-abopreis {
 	font-size: 2rem;
@@ -479,18 +532,23 @@ li.post-157 h3 {
 	float: left;	
 }
 span.popstopfreunde-spende {
-	width: 50%;
-	float: right;
+	width: 100%;
+	float: left;
+}
+h2.woocommerce-loop-product__title {
+	
 }
 .popstopfreunde-spende label {
 	color: #FFF;
 	font-size: 1.1rem;
-	float: right;
+	float: left;
+	padding-right: 0.5rem;
 }
 input#popstopfreunde_spende, input[placeholder], [placeholder], *[placeholder] {
 	color: #333 !important;
 	opacity: 0.9 !important;
 	text-align: center;
+	width: 50%;
 }
 ::-webkit-input-placeholder { /* Chrome */
 	color: #333 !important;
@@ -618,5 +676,11 @@ a.popstop-freunde-logo-nofp {
 	}	
 	#secondary.medium-4.large-4.columns.widget-area {
 		padding-right: 0.9375rem;	
+	}
+	section#popstopfreunde-anmeldung div.large-4.columns {
+		margin-right: 0 !important;
+		width: 100% !important;
+		min-height: 20rem;
+		margin-bottom: 1rem;
 	}
 }

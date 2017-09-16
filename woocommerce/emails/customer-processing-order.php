@@ -29,6 +29,13 @@ do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
 <?php
 
+    if ( 'bacs' == $order->payment_method ) {
+      echo '<p><strong>Infos für Banküberweisung:</strong></p>
+			<p>Kontoinhaber: Förderverein popstop-freunde.club, Egg/Schweiz</p>
+			<p>IBAN: CH16 8127 4000 0059 1572 9</p>
+			<p>Bank: Raiffeisenbank Rapperswil-Jona, 8645 Jona, Schweiz</p>
+			<p>BIC (SWIFT): RAIFCH22</p>';
+    }
 /**
  * @hooked WC_Emails::order_details() Shows the order details table.
  * @hooked WC_Emails::order_schema_markup() Adds Schema.org markup.

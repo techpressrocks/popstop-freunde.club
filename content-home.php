@@ -33,7 +33,7 @@
 										</p>
 									</div>
 									<div class="popstopfreund-freundinwerden-cta">
-										<a class="popstopfreunde-freundinwerden-button" href="#popstopfreunde-anmeldung">FreundIn Werden!</a>
+										<a class="popstopfreunde-freundinwerden-button button" href="#popstopfreunde-anmeldung">FreundIn Werden!</a>
 									</div>
 								</div>
 							</div>
@@ -46,33 +46,38 @@
 						<div class="entry-content">
 							<h3 class="feuz-section-title">FreundIn des Fördervereins popstop-freunde.club werden und popstop.eu unterstützen!</h3>
 							<h4>Wähle dir die passende Mitgliedschaft unten aus. Danke!</h4>
-								<div class="large-4 columns">
-									<div class="woo-popstop-freunde-logo" href="<?php echo site_url(); ?>" title="popstop-freunde" rel="home">popstop</div>
+							<div class="large-4 medium-12 small-12 columns ">
+								<div class="woo-popstop-freunde-logo" href="<?php echo site_url(); ?>" title="popstop-freunde" rel="home">popstop</div>
 									<span>-freunde.club</span><span class="popstop-freunde-abopreis">30 €</span>
 									<?php echo do_shortcode('[product id="155"]'); ?>
-								</div>
-								<div class="large-4 columns">
-									<div class="woo-popstop-freunde-logo" href="<?php echo site_url(); ?>" title="popstop-freunde" rel="home">popstop</div>
-									<span>-freunde.club</span><span class="popstop-freunde-abopreis">50 €</span>
+							</div>
+							<div class="large-4 medium-12 small-12 columns">
+								<div class="woo-popstop-freunde-logo" href="<?php echo site_url(); ?>" title="popstop-freunde" rel="home">popstop</div>
+								<span>-freunde.club</span><span class="popstop-freunde-abopreis">50 €</span>
 									<?php echo do_shortcode('[product id="156"]'); ?>
-								</div>
-								<div class="large-4 columns">
-									<div class="woo-popstop-freunde-logo" href="<?php echo site_url(); ?>" title="popstop-freunde" rel="home">popstop</div>
-									<span>-freunde.club</span><span class="popstop-freunde-abopreis">
+							</div>
+							<div class="large-4 medium-12 small-12 columns">
+								<div class="woo-popstop-freunde-logo" href="<?php echo site_url(); ?>" title="popstop-freunde" rel="home">popstop</div>
+								<span>-freunde.club</span><span class="popstop-freunde-abopreis">
 									50 €+</span>
 									<?php echo do_shortcode('[product id="157"]'); ?>
-								</div>
-
-							<h5>Unsere Vereinssatzung (in der Schweiz heisst das »Statuten«) findest du unter <a href="<?php echo site_url() . '/statuten-vereinssatzung/'; ?>">Statuten - Vereinssatzung</a>.</h5>		
+							</div>
 						</div>
 					</div>
-				</div>
+				</div>	
+				<div class="entry-content">
+					<div class="content_wrap row">
+						<div class="large-12 columns">
+							<h5>Unsere Vereinssatzung (in der Schweiz heisst das »Statuten«) findest du unter <a href="<?php echo site_url() . '/statuten-vereinssatzung/'; ?>">Statuten - Vereinssatzung</a>.</h5>	
+						</div>
+					</div>	
+				</div>	
 			</section>		
 			<section id="blog">
 				<div class="content_wrap row">
 				<h2 class="feuz-section-title">Neuigkeiten & Infos - Förderverein popstop-freunde.club</h2>
 				<?php
-				$query = new WP_query ( array( 'post_type' => 'post' ) );
+				$query = new WP_query ( array( 'post_type' => 'post', 'in_category' => '1' ) );
 				if ( $query->have_posts() ) {
 					while ( $query->have_posts() ) {
 						$query->the_post();
@@ -81,6 +86,8 @@
 						<h3 class="feuz-book-title"><?php the_title(); ?></h3></a>
 						<div class="entry-content">
 							<?php the_excerpt(); ?>
+							<?php //the_content(); ?>
+							<?php //echo substr($content, 0, stripos($content, ' ', 200)); ?>
 						</div>
 					<?php
 					}	

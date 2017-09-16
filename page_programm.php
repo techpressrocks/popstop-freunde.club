@@ -39,7 +39,7 @@ endif;
                 <a href="<?php echo esc_url( $item->get_permalink() ); ?>"
                     title="<?php printf( __( 'Posted %s', 'my-text-domain' ), $item->get_date('j F Y | g:i a') ); ?>">
                     <?php echo esc_html( $item->get_title() ); ?>
-					<?php  echo $item->get_description(); ?>
+					<?php echo $item->get_description(); ?>
                 </a>
             </li>
         <?php endforeach; ?>

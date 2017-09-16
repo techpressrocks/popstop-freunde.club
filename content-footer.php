@@ -29,7 +29,7 @@
                      
         <div id="ftxt" class="site-info medium-12 large-12 columns cntr">
             
-                 <p>&copy 2016 <?php echo bloginfo( 'name' ); ?> - <?php echo site_url(); ?></p>
+                 <p>&copy 2017 <?php echo bloginfo( 'name' ); ?> - <?php echo site_url(); ?></p>
                  
         </div><!-- .site-info -->
 

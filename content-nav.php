@@ -35,7 +35,7 @@ if ( is_front_page() ) {
 		</span>		
           <div class="top-bar-left">
 		  
-		  <a class="popstop-freunde-logo" href="<?php echo site_url(); ?>" title="popstop-freunde" rel="home">popstop</a><span>-freunde.club</span>
+		  <a class="popstop-freunde-logo" href="<?php echo site_url(); ?>" title="popstop-freunde" rel="home">popstop</a><a href="<?php echo site_url(); ?>" title="popstop-freunde" rel="home"><span>-freunde.club</span></a>
 													 
  		  <?php
 			wp_nav_menu( array(
@@ -87,7 +87,7 @@ if ( is_front_page() ) {
 		</span>		
           <div class="top-bar-left nofp">
 		  
-		  <a class="popstop-freunde-logo-nofp" href="<?php echo site_url(); ?>" title="popstop-freunde" rel="home">popstop</a><span>-freunde.club</span>
+		  <a class="popstop-freunde-logo-nofp" href="<?php echo site_url(); ?>" title="popstop-freunde" rel="home">popstop</a><a href="<?php echo site_url(); ?>" title="popstop-freunde" rel="home"><span>-freunde.club</span></a>
 													 
 			<?php 
 			wp_nav_menu( array(
